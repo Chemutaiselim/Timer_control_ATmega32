@@ -1,4 +1,7 @@
-#include <avr/io.h> void timer_delay(); 
+#include <avr/io.h>
+ 
+
+void timer_delay(); 
 
 int main(void){
     
@@ -19,16 +22,16 @@ int main(void){
         TCNT0 = 0x5F; 
         /* Load TCNT0 with the start value*/
 
-         TCCR0 = 0x01; 
+         TCCR0A = 0x01; 
          /* Timer0, normal mode, no pre-scalar */ 
 
-         while((TIFR&0x01)==0);
+         while((TIFR0 & 0x01)==0);
           /* Wait for TOV0 to roll over, i.e. overflow */
 
-         TCCR0 = 0;
+         TCCR0A = 0;
           /* set TCCR0 to 0 to stop the timer */ 
 
-         TIFR = 0x1;
+         TIFR0 = 0x1;
           /* Clear TOV0 flag*/
 
           }
