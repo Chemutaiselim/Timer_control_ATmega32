@@ -1,5 +1,8 @@
 #include <avr/io.h> void timer_delay(); 
-int main(void){ DDRC = 0xFF; /* PORTC as output*/ /* main loop */
+
+int main(void){
+    
+     DDRC = 0xFF; /* PORTC as output*/ /* main loop */
 
  while(1){ 
      
