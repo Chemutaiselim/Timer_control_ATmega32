@@ -1,5 +1,4 @@
 #include <avr/io.h>
- 
 
 void timer_delay(); 
 
@@ -35,4 +34,12 @@ int main(void){
           /* Clear TOV0 flag*/
 
           }
+		  
+		   /*
+		   had to add an a to the Timer/control register hence it became; TCCR0A
+		   had to add a 0 to the Timer/ counter interrupt flag register hence it became; TIFRA0
+		   
+		   */
+		   
+		   
 
